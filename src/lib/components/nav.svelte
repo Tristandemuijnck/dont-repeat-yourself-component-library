@@ -1,4 +1,6 @@
 <script>
+	import { data } from "../../routes/+layout.svelte";
+
   // filter staat standaard uit, het menu is standaard uitgeklapt
   let mobileDropdownActive = true;
   let filterDropdownActive = false;
@@ -22,7 +24,11 @@
       filterDropdownActive = !filterDropdownActive;
    
   }
+
+  
+
 </script>
+
 
 <nav>
   <section class="nav-bar" class:active={mobileDropdownActive}>

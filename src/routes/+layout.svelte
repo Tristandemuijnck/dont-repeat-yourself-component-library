@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import Nav from '$lib/components/nav.svelte';
 
 	export let data;
 
@@ -23,6 +24,7 @@
 </script>
 
 <Header path={$page.url.pathname} />
+<Nav></Nav>
 
 <slot />
 
