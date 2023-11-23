@@ -26,7 +26,7 @@
     }
 </script>
 
-<form action={formAction} method={formMethod} use:enhance={handleSubmit} class:showLogin={showLogin}>
+<form action={formAction} method={formMethod} use:enhance={handleSubmit} class:showLogin={showLogin} on:submit={toggleLogin}>
 	<div class="form-content">
 		<FormField
 			iconSrc="/images/icons/email.svg"
@@ -39,7 +39,7 @@
 		></FormField>
 	</div>
 
-	<Button btnType="submit" on:click={toggleLogin} {btnText}></Button>
+	<Button btnType="submit" {btnText}></Button>
 </form>
 
 <!-- Check email -->
