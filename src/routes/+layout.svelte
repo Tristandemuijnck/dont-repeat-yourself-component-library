@@ -5,9 +5,7 @@
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import Nav from '$lib/organisms/nav.svelte';
-	// later weghalen
-	import NavFilterList from '../lib/atoms/nav-filter-list.svelte';
-
+	import NavFilterList from '../lib/atoms/NavFilterList.svelte';
 	export let data;
 
 	$: ({ supabase, session } = data);
@@ -23,11 +21,14 @@
 
 		return () => subscription.unsubscribe();
 	});
+
+	
 </script>
 
 <Header path={$page.url.pathname} />
-<Nav></Nav>
-<NavFilterList></NavFilterList>
+<Nav {data}></Nav>
+<NavFilterList {data}></NavFilterList>
+
 
 <slot />
 

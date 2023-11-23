@@ -1,11 +1,13 @@
 <script>
+  import NavFilterList from "../atoms/NavFilterList.svelte";
+  export let data
+  
 
   // filter staat standaard uit, het menu is standaard uitgeklapt
   let mobileDropdownActive = true;
   let filterDropdownActive = false;
 
   function openMobileMenu() {
-    // Check if the screen width is less than 700px (or any other threshold you prefer)
     // Deze functie checkt of de scherm breedte minder dan 700 pixels is. 
     // wanneer het scherm kleiner is dan 700px werkt de knop, anders werkt deze niet.
     if (window.innerWidth < 700) {
@@ -24,7 +26,7 @@
    
   }
 
-  
+  console.log(data)
 
 </script>
 
@@ -54,7 +56,9 @@
           </form>
         </section>
         <section class="filter-menu">
+          <NavFilterList {data}></NavFilterList>
           <ul class="focus">
+            
             
             <li><h2> Focus<input type="checkbox"></h2></li>
             <li>Ik<input type="checkbox"></li>
