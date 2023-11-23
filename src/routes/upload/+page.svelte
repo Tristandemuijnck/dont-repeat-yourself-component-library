@@ -1,5 +1,7 @@
 <script>
-	import UploadForm from '../../lib/organisms/UploadForm.svelte';
+	import UploadForm from '$lib/organisms/UploadForm.svelte';
+
+    export let data;
 </script>
 
 <main>
@@ -17,6 +19,7 @@
             formAction="/api/upload"
             formMethod="POST"
             btnText="Werkvorm Uploaden"
+            {data}
         ></UploadForm>
 	</section>
 </main>

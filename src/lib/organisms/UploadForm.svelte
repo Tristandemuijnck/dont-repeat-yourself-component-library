@@ -2,11 +2,13 @@
 	import { applyAction, enhance } from '$app/forms'
 
 	import FormField from '$lib/molecules/FormField.svelte'
+	import SelectFormField from '$lib/molecules/SelectFormField.svelte';
 	import Button from '$lib/atoms/Button.svelte'
 
 	export let formAction
 	export let formMethod
     export let btnText
+	export let data
 
 	let loading = false
     let showUpload = true;
@@ -28,6 +30,7 @@
 
 <form action={formAction} method={formMethod} use:enhance={handleSubmit} class:showLogin={showUpload} on:submit={toggleUpload}>
 	<div class="form-content">
+		<!-- Werkvorm naam -->
 		<FormField
 			iconSrc="/images/icons/email.svg"
 			labelFor="werkvormName"
@@ -37,26 +40,37 @@
 			inputName="werkvormName"
 			inputId="werkvormName"
 		/>
-        <!-- TODO Select input form field with data input from Hygraph -->
-        <FormField
+		<!-- Werkvorm beschrijving -->
+		<FormField
 			iconSrc="/images/icons/email.svg"
 			labelFor="werkvormDesc"
 			labelText="Beschrijving werkvorm"
 			inputType="text"
-			inputPlaceholder="Vul een beschrijving in..."
+			inputPlaceholder="Beschrijf de werkvorm..."
 			inputName="werkvormDesc"
 			inputId="werkvormDesc"
 		/>
-        <!-- TODO Select input form field with data input from Hygraph -->
-        <FormField
+		<!-- Faculteit -->
+		<SelectFormField
 			iconSrc="/images/icons/email.svg"
 			labelFor="werkvormFaculty"
-			labelText="Beschrijving werkvorm"
-			inputType="text"
-			inputPlaceholder="Vul een faculteit in..."
-			inputName="werkvormFaculty"
-			inputId="werkvormFaculty"
+			labelText="Faculteit"
+			selectName="werkvormFaculty"
+			selectId="werkvormFaculty"
+			selectPlaceholder="Selecteer een faculteit..."
+			options={data.faculteits}
 		/>
+        <!-- Opleiding -->
+		<SelectFormField
+			iconSrc="/images/icons/email.svg"
+			labelFor="werkvormOpleiding"
+			labelText="Opleiding"
+			selectName="werkvormOpleiding"
+			selectId="werkvormOpleiding"
+			selectPlaceholder="Selecteer een opleiding..."
+			options={data.opleidings}
+		/>
+
         <!-- TODO File input form field for thumbnail, max 1 -->
 
         <!-- TODO File input form field for video, max 1 -->
