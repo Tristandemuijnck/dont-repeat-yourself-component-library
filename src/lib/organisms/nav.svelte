@@ -1,5 +1,4 @@
 <script>
-	import { data } from "../../routes/+layout.svelte";
 
   // filter staat standaard uit, het menu is standaard uitgeklapt
   let mobileDropdownActive = true;
@@ -31,6 +30,7 @@
 
 
 <nav>
+
   <section class="nav-bar" class:active={mobileDropdownActive}>
     <!-- menu is a mobile only button -->
     
@@ -55,6 +55,7 @@
         </section>
         <section class="filter-menu">
           <ul class="focus">
+            
             <li><h2> Focus<input type="checkbox"></h2></li>
             <li>Ik<input type="checkbox"></li>
             <li>De ander<input type="checkbox"></li>

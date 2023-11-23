@@ -4,7 +4,9 @@
 	import { page } from '$app/stores';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import Nav from '$lib/components/nav.svelte';
+	import Nav from '$lib/organisms/nav.svelte';
+	// later weghalen
+	import NavFilterList from '../lib/atoms/nav-filter-list.svelte';
 
 	export let data;
 
@@ -25,6 +27,7 @@
 
 <Header path={$page.url.pathname} />
 <Nav></Nav>
+<NavFilterList></NavFilterList>
 
 <slot />
 
