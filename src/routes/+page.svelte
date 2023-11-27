@@ -1,13 +1,13 @@
 <script>
-    export let data
-
-    console.log(data)
+    
+    import Nav from "$lib/organisms/nav.svelte"
 </script>
 
 
 
 
 <main>
+    <Nav></Nav>
 
 </main>
 

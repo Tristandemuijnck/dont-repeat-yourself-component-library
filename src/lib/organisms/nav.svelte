@@ -57,7 +57,7 @@
         </section>
         <section class="filter-menu">
           <NavFilterList {data}></NavFilterList>
-          <ul class="focus">
+          <!-- <ul class="focus">
             
             
             <li><h2> Focus<input type="checkbox"></h2></li>
@@ -93,7 +93,7 @@
             <li>Verbreden<input type="checkbox"></li>
             <li>Verdiepen<input type="checkbox"></li>
             <li>Uitwisselen<input type="checkbox"></li>
-          </ul>
+          </ul> -->
           
           <button class="activate-filters">Filters toepassen</button>
        
