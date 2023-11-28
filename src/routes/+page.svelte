@@ -1,13 +1,16 @@
 <script>
     
-    import Nav from "$lib/organisms/nav.svelte"
+    import Nav from "$lib/organisms/nav.svelte"    
+    export let tagData;
+    export let data;
 </script>
 
 
 
 
 <main>
-    <Nav></Nav>
+
+    <Nav {data}{tagData}></Nav>
 
 </main>
 

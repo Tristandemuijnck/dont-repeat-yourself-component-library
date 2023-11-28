@@ -1,6 +1,7 @@
 <script>
   import NavFilterList from "../atoms/NavFilterList.svelte";
-  export let data
+  export let data;
+  export let tagData;
   
 
   // filter staat standaard uit, het menu is standaard uitgeklapt
@@ -56,7 +57,7 @@
           </form>
         </section>
         <section class="filter-menu">
-          <NavFilterList {data}></NavFilterList>
+          <NavFilterList {data}{tagData}></NavFilterList>
           <!-- <ul class="focus">
             
             

@@ -1,23 +1,26 @@
 <script>
-    export let data;
-
     import { onMount } from 'svelte';
 
-    onMount(() => {
-        if (data) {
-            console.log(data);
+    export let data;
+    export let tagData;
 
-            data.tags.forEach((tag) => {
-                console.log(tag.title);
-            });
-        } else {
-            console.log("Data is undefined.");
-        }
+    onMount(async () => {
+        console.log(data);
+        
+
+        console.log(tagData);
+       
     });
 </script>
 
-{#if data && data.tags}
-    {#each data.tags as tag}
-        <li class="tag">{tag.title}</li>
+
+    <!-- {#each data.werkvormen as werkvorm}
+        <div>{werkvorm.title}</div>
     {/each}
-{/if}
+
+
+
+    {#each tagData.tags as tag}
+        <div>{tag.titel}</div>
+    {/each} -->
+
