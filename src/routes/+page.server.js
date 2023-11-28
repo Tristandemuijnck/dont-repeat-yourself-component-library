@@ -1,7 +1,6 @@
 import { gql } from 'graphql-request';
 import { hygraph, hygraphHP } from '$lib/Utils/hygraph';
 export let data;
-export let tagData;
 
 export async function load() {
 	let query = gql`
@@ -18,7 +17,8 @@ export async function load() {
 					titel
 				}
 				tags {
-					
+					... on Tag {
+						id
 						titel
 					}
 				}
@@ -26,15 +26,7 @@ export async function load() {
 			}
 		}
 	`;
-	let tagQuery = gql`
-		query tagquery {
-			tags {
-				titel
-			}
-		}
-	`;
 	const data = await hygraphHP.request(query);
-	const tagData = await hygraphHP.request(tagQuery);
 
-	return { data, tagData };
+	return data;
 }

@@ -1,7 +1,6 @@
 <script>
     
     import Nav from "$lib/organisms/nav.svelte"    
-    export let tagData;
     export let data;
 </script>
 
@@ -10,7 +9,7 @@
 
 <main>
 
-    <Nav {data}{tagData}></Nav>
+    <Nav {data}></Nav>
 
 </main>
 
