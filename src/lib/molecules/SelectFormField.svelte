@@ -10,6 +10,7 @@
 	export let selectId;
 	export let selectPlaceholder;
 	export let options;
+    export let isRequired;
 </script>
 
 <div class="form-field">
@@ -18,7 +19,7 @@
 		<Label {labelFor} {labelText}></Label>
 	</span>
 
-	<SelectField {selectName} {selectId} {selectPlaceholder} {options}></SelectField>
+	<SelectField {selectName} {selectId} {selectPlaceholder} {options} {isRequired}></SelectField>
 </div>
 
 <style>

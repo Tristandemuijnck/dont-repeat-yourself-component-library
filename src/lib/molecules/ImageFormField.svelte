@@ -1,7 +1,7 @@
 <script>
 	import Icon from '$lib/atoms/Icon.svelte'
 	import Label from '$lib/atoms/Label.svelte'
-	import InputField from '$lib/atoms/InputField.svelte'
+	import ImageInputField from '$lib/atoms/ImageInputField.svelte'
 
 	export let iconSrc
 	export let labelFor
@@ -19,7 +19,7 @@
 		<Label {labelFor} {labelText}></Label>
 	</span>
 
-	<InputField {inputType} {inputPlaceholder} {inputName} {inputId} {isRequired}></InputField>
+	<ImageInputField {inputType} {inputPlaceholder} {inputName} {inputId} {isRequired}></ImageInputField>
 </div>
 
 <style>

@@ -3,9 +3,10 @@
 	export let selectId;
 	export let selectPlaceholder;
 	export let options;
+    export let isRequired;
 </script>
 
-<select name={selectName} id={selectId}>
+<select name={selectName} id={selectId} required={isRequired}>
     <option value="" disabled>{selectPlaceholder}</option>
     {#each options as option}
         <option value={option.id}>{option.titel}</option>

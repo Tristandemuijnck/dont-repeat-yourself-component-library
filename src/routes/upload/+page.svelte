@@ -28,13 +28,13 @@
 	main {
 		display: flex;
 		flex-direction: column;
-		padding: 0 2rem;
+		padding: 6rem 2rem;
 	}
 
     section {
         display: flex;
         flex-direction: column;
-        margin: 6rem auto 0;
+        /* margin-top: 4rem; */
         gap: 3rem;
         max-width: 25rem;
     }
@@ -56,18 +56,13 @@
     }
 
 	@media (min-width: 48rem) {
-		main {
-			height: calc(100dvh - 9rem);
-			/* justify-content: center; */
-		}
-
         section {
             flex-direction: row;
             gap: 2rem;
             margin: 0 auto;
             max-width: unset;
             position: relative;
-            top: 25%;
+            top: 0;
         }
 
         header {

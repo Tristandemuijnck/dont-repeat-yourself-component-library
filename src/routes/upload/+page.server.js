@@ -12,6 +12,14 @@ export async function load() {
 				id
 				titel
 			}
+			contactpersoons {
+				id
+				email
+			}
+			tags {
+				id
+				titel
+			}
 		}
 	`;
 

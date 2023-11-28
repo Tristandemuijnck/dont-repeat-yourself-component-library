@@ -4,9 +4,10 @@
     export let inputName
     export let inputId
     export let isRequired
+    export let hasMultiple
 </script>
 
-<input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}" required={isRequired}>
+<input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}" required={isRequired} multiple={hasMultiple}>
 
 <style>
     input{

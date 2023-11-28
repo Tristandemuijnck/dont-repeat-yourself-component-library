@@ -6,7 +6,7 @@
     export let isRequired
 </script>
 
-<input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}" required={isRequired}>
+<input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}" accept="image/*" required={isRequired}>
 
 <style>
     input{

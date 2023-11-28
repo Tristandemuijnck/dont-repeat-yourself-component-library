@@ -4,6 +4,9 @@
 	import FormField from '$lib/molecules/FormField.svelte'
 	import SelectFormField from '$lib/molecules/SelectFormField.svelte';
 	import Button from '$lib/atoms/Button.svelte'
+	import ImageFormField from '$lib/molecules/ImageFormField.svelte';
+	import VideoFormField from '$lib/molecules/VideoFormField.svelte';
+    import FileFormField from '$lib/molecules/FileFormField.svelte';
 
 	export let formAction
 	export let formMethod
@@ -39,7 +42,21 @@
 			inputPlaceholder="Vul een naam in..."
 			inputName="werkvormName"
 			inputId="werkvormName"
+            isRequired={true}
 		/>
+
+        <!-- Werkvorm korte beschrijving -->
+		<FormField
+            iconSrc="/images/icons/email.svg"
+            labelFor="werkvormDescShort"
+            labelText="Korte beschrijving werkvorm"
+            inputType="text"
+            inputPlaceholder="Beschrijf de werkvorm kort..."
+            inputName="werkvormDescShort"
+            inputId="werkvormDescShort"
+            isRequired={true}
+        />
+
 		<!-- Werkvorm beschrijving -->
 		<FormField
 			iconSrc="/images/icons/email.svg"
@@ -49,17 +66,9 @@
 			inputPlaceholder="Beschrijf de werkvorm..."
 			inputName="werkvormDesc"
 			inputId="werkvormDesc"
+            isRequired={true}
 		/>
-		<!-- Faculteit -->
-		<SelectFormField
-			iconSrc="/images/icons/email.svg"
-			labelFor="werkvormFaculty"
-			labelText="Faculteit"
-			selectName="werkvormFaculty"
-			selectId="werkvormFaculty"
-			selectPlaceholder="Selecteer een faculteit..."
-			options={data.faculteits}
-		/>
+
         <!-- Opleiding -->
 		<SelectFormField
 			iconSrc="/images/icons/email.svg"
@@ -69,13 +78,69 @@
 			selectId="werkvormOpleiding"
 			selectPlaceholder="Selecteer een opleiding..."
 			options={data.opleidings}
+            isRequired={true}
 		/>
 
-        <!-- TODO File input form field for thumbnail, max 1 -->
+        <!-- Studiejaar -->
+        <FormField
+            iconSrc="/images/icons/email.svg"
+            labelFor="werkvormStudiejaar"
+            labelText="Studiejaar"
+            inputType="number"
+            inputPlaceholder="Selecteer een studiejaar..."
+            inputName="werkvormStudiejaar"
+            inputId="werkvormStudiejaar"
+            isRequired={true}
+        />
 
-        <!-- TODO File input form field for video, max 1 -->
+        <!-- Contactpersoon -->
+        <SelectFormField
+			iconSrc="/images/icons/email.svg"
+			labelFor="werkvormContactpersoon"
+			labelText="Contactpersoon"
+			selectName="werkvormContactpersoon"
+			selectId="werkvormContactpersoon"
+			selectPlaceholder="Selecteer een contactpersoon..."
+			options={data.contactpersoons}
+            isRequired={true}
+		/>
 
-        <!-- TODO File input form field for bestanden, max 3 -->
+        <!-- Thumbnail -->
+        <ImageFormField
+            iconSrc="/images/icons/email.svg"
+            labelFor="werkvormThumbnail"
+            labelText="Thumbnail werkvorm"
+            inputType="file"
+            inputPlaceholder="Selecteer een thumbnail..."
+            inputName="werkvormThumbnail"
+            inputId="werkvormThumbnail"
+            isRequired={true}
+        />
+
+        <!-- Video -->
+        <VideoFormField
+            iconSrc="/images/icons/email.svg"
+            labelFor="werkvormVideo"
+            labelText="Video werkvorm"
+            inputType="file"
+            inputPlaceholder="Selecteer een video..."
+            inputName="werkvormVideo"
+            inputId="werkvormVideo"
+            isRequired={true}
+        />
+
+        <!-- Materialen -->
+        <FileFormField
+            iconSrc="/images/icons/email.svg"
+            labelFor="werkvormBestanden"
+            labelText="Bestanden werkvorm"
+            inputType="file"
+            inputPlaceholder="Selecteer een bestand..."
+            inputName="werkvormBestanden"
+            inputId="werkvormBestanden"
+            isRequired={true}
+            hasMultiple={true}
+        />
 	</div>
 
 	<Button btnType="submit" {btnText}></Button>
@@ -133,6 +198,7 @@
     @media (min-width: 48rem) {
         form {
             width: 30rem;
+            margin-bottom: 5rem;
         }
 
         article {
