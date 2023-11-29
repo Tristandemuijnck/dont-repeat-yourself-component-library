@@ -15,14 +15,15 @@ export async function load() {
 				}
 				opleiding {
 					titel
-				}
-				tags {
-					... on Tag {
-						id
+					faculteit {
 						titel
 					}
 				}
 				title
+			}
+			tags {
+				id
+				titel
 			}
 		}
 	`;

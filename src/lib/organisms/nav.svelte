@@ -1,5 +1,5 @@
 <script>
-  import NavFilterList from "../atoms/[tag]/NavFilterList.svelte";
+  import NavFilterList from "../atoms/NavFilterList.svelte";
   export let data;
  
   

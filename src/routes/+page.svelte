@@ -2,9 +2,8 @@
     
     import Nav from "$lib/organisms/nav.svelte"    
     export let data;
+    console.log(data)
 </script>
-
-
 
 
 <main>
