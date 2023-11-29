@@ -3,10 +3,9 @@
 
 	import FormField from '$lib/molecules/FormField.svelte'
 	import SelectFormField from '$lib/molecules/SelectFormField.svelte';
-	import Button from '$lib/atoms/Button.svelte'
-	import ImageFormField from '$lib/molecules/ImageFormField.svelte';
-	import VideoFormField from '$lib/molecules/VideoFormField.svelte';
     import FileFormField from '$lib/molecules/FileFormField.svelte';
+	import Button from '$lib/atoms/Button.svelte'
+	import LimitedFormField from '../molecules/LimitedFormField.svelte';
 
 	export let formAction
 	export let formMethod
@@ -33,7 +32,7 @@
 
 <form action={formAction} method={formMethod} use:enhance={handleSubmit} class:showLogin={showUpload} on:submit={toggleUpload}>
 	<div class="form-content">
-		<!-- Werkvorm naam -->
+		<!-- Naam -->
 		<FormField
 			iconSrc="/images/icons/email.svg"
 			labelFor="werkvormName"
@@ -45,19 +44,20 @@
             isRequired={true}
 		/>
 
-        <!-- Werkvorm korte beschrijving -->
-		<FormField
+        <!-- Korte beschrijving -->
+		<LimitedFormField
             iconSrc="/images/icons/email.svg"
-            labelFor="werkvormDescShort"
+            labelFor="werkvormShortDesc"
             labelText="Korte beschrijving werkvorm"
             inputType="text"
-            inputPlaceholder="Beschrijf de werkvorm kort..."
-            inputName="werkvormDescShort"
-            inputId="werkvormDescShort"
+            inputPlaceholder="Vul een korte beschrijving in..."
+            inputName="werkvormShortDesc"
+            inputId="werkvormShortDesc"
             isRequired={true}
+            maxlength="200"
         />
 
-		<!-- Werkvorm beschrijving -->
+		<!-- Beschrijving -->
 		<FormField
 			iconSrc="/images/icons/email.svg"
 			labelFor="werkvormDesc"
@@ -106,24 +106,22 @@
 		/>
 
         <!-- Thumbnail -->
-        <ImageFormField
+        <FileFormField
             iconSrc="/images/icons/email.svg"
             labelFor="werkvormThumbnail"
             labelText="Thumbnail werkvorm"
             inputType="file"
-            inputPlaceholder="Selecteer een thumbnail..."
             inputName="werkvormThumbnail"
             inputId="werkvormThumbnail"
             isRequired={true}
         />
 
         <!-- Video -->
-        <VideoFormField
+        <FileFormField
             iconSrc="/images/icons/email.svg"
             labelFor="werkvormVideo"
             labelText="Video werkvorm"
             inputType="file"
-            inputPlaceholder="Selecteer een video..."
             inputName="werkvormVideo"
             inputId="werkvormVideo"
             isRequired={true}
@@ -132,15 +130,16 @@
         <!-- Materialen -->
         <FileFormField
             iconSrc="/images/icons/email.svg"
-            labelFor="werkvormBestanden"
-            labelText="Bestanden werkvorm"
+            labelFor="werkvormMaterialen"
+            labelText="Materialen werkvorm"
             inputType="file"
-            inputPlaceholder="Selecteer een bestand..."
-            inputName="werkvormBestanden"
-            inputId="werkvormBestanden"
+            inputName="werkvormMaterialen"
+            inputId="werkvormMaterialen"
             isRequired={true}
             hasMultiple={true}
         />
+
+        <!-- TODO Tags -->
 	</div>
 
 	<Button btnType="submit" {btnText}></Button>

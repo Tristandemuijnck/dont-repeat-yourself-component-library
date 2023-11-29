@@ -1,9 +1,9 @@
 <script>
-    export let inputType
-    export let inputPlaceholder
-    export let inputName
-    export let inputId
-    export let isRequired
+    export let inputType = "text"
+    export let inputPlaceholder = "placeholder"
+    export let inputName = ""
+    export let inputId = ""
+    export let isRequired = false
 </script>
 
 <input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}" required={isRequired || false}>

@@ -1,7 +1,7 @@
 <script>
 	import Icon from '$lib/atoms/Icon.svelte'
 	import Label from '$lib/atoms/Label.svelte'
-    import SelectField from '$lib/atoms/SelectField.svelte'
+    import SelectField from '$lib/atoms/inputfields/SelectField.svelte'
 
 	export let iconSrc
 	export let labelFor

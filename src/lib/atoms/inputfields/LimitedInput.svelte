@@ -1,9 +1,9 @@
 <script>
-    export let inputType
-    export let inputPlaceholder
-    export let inputName
-    export let inputId
-    export let isRequired
+    export let inputType = "text"
+    export let inputPlaceholder = "placeholder"
+    export let inputName = ""
+    export let inputId = ""
+    export let isRequired = false
     export let maxLength
 </script>
 
