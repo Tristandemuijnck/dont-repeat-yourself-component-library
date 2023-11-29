@@ -2,7 +2,8 @@
    
 
     export let data;
-    let tag = data.tags;
+  
+    console.log(data)
     console.log(data.tags)
 
    
