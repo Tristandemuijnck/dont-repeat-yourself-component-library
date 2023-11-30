@@ -24,6 +24,6 @@ export async function load() {
 	`;
 
 	const data = await hygraphHP.request(query);
-	console.log(data);
+	// console.log(data);
 	return data;
 }

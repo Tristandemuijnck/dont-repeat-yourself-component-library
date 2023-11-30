@@ -12,6 +12,17 @@
     export let btnText
 	export let data
 
+    // Convert email field to titel field
+    const contactpersoonObj = data.contactpersoons.map(({
+        email: titel,
+        ...rest
+    }) => ({
+        ...rest,
+        titel
+    }))
+
+    // console.log(contactpersoonObj);
+
 	let loading = false
     let showUpload = true;
     let showVerify = false;
@@ -30,7 +41,7 @@
     }
 </script>
 
-<form action={formAction} method={formMethod} use:enhance={handleSubmit} class:showLogin={showUpload} on:submit={toggleUpload}>
+<form action={formAction} method={formMethod} use:enhance={handleSubmit} class:showLogin={showUpload} on:submit={toggleUpload} enctype="multipart/form-data">
 	<div class="form-content">
 		<!-- Naam -->
 		<FormField
@@ -53,8 +64,8 @@
             inputPlaceholder="Vul een korte beschrijving in..."
             inputName="werkvormShortDesc"
             inputId="werkvormShortDesc"
-            isRequired={true}
-            maxlength="200"
+            isRequired={false}
+            maxLength="200"
         />
 
 		<!-- Beschrijving -->
@@ -78,7 +89,7 @@
 			selectId="werkvormOpleiding"
 			selectPlaceholder="Selecteer een opleiding..."
 			options={data.opleidings}
-            isRequired={true}
+            isRequired={false}
 		/>
 
         <!-- Studiejaar -->
@@ -90,7 +101,7 @@
             inputPlaceholder="Selecteer een studiejaar..."
             inputName="werkvormStudiejaar"
             inputId="werkvormStudiejaar"
-            isRequired={true}
+            isRequired={false}
         />
 
         <!-- Contactpersoon -->
@@ -101,8 +112,8 @@
 			selectName="werkvormContactpersoon"
 			selectId="werkvormContactpersoon"
 			selectPlaceholder="Selecteer een contactpersoon..."
-			options={data.contactpersoons}
-            isRequired={true}
+			options={contactpersoonObj}
+            isRequired={false}
 		/>
 
         <!-- Thumbnail -->
@@ -113,7 +124,9 @@
             inputType="file"
             inputName="werkvormThumbnail"
             inputId="werkvormThumbnail"
+            inputPlaceholder="Selecteer een thumbnail..."
             isRequired={true}
+            hasMultiple={false}
         />
 
         <!-- Video -->
@@ -124,7 +137,9 @@
             inputType="file"
             inputName="werkvormVideo"
             inputId="werkvormVideo"
-            isRequired={true}
+            inputPlaceholder="Selecteer een video..."
+            isRequired={false}
+            hasMultiple={false}
         />
 
         <!-- Materialen -->
@@ -135,7 +150,8 @@
             inputType="file"
             inputName="werkvormMaterialen"
             inputId="werkvormMaterialen"
-            isRequired={true}
+            inputPlaceholder="Selecteer materialen..."
+            isRequired={false}
             hasMultiple={true}
         />
 
