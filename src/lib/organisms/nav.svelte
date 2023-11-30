@@ -182,20 +182,7 @@
     font-size:1rem;
     
   }
-  .filter-menu ul{
-    
-    margin: .5em;
-    padding: .5em;
-  }
-  .filter-menu ul > li{
-    list-style-type: none;
-    margin: 1em;
-    
-  }
 
-  .filter-menu input[type="checkbox"]{
-    margin-left: 1em;
-  }
 
   .nav-bar.active .mobile-menu-dropdown,
   .filter-dropdown.active {
