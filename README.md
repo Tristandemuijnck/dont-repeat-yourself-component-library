@@ -1,38 +1,55 @@
-# create-svelte
+# Platform Grote Thema's README
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Inhoudsopgave
 
-## Creating a project
+  * [Beschrijving](#beschrijving)
+  * [Gebruik en installatie](#gebruik-en-installatie)
+  * [Kenmerken](#kenmerken)
+  * [Bronnen](#bronnen)
+  * [Licentie](#licentie)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Beschrijving
+Platform Grote Thema's is een toegankelijke pagina waarop docenten werkvormen kunnen bekijken. Daarnaast kunnen de docenten via de zoekbalk ook werkvormen vinden. Verder kunnen docenten zelf werkvormen met een beschrijving erbij uploaden. De website is simpel en overzichtelijk zodat de gebruiker snel kan vinden waar diegene naar opzoek is.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Gebruik en installatie
+Om Platform Grote Thema's te installeren, volg je eenvoudig de onderstaande stappen:
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+1. Clone het project naar je lokale machine:
+   ```
+   git clone https://github.com/jouw-gebruikersnaam/Platform-Grote-Themas.git
+   ```
 
-## Developing
+2. Navigeer naar de projectdirectory:
+   ```
+   cd Platform-Grote-Themas
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. Installeer de benodigde afhankelijkheden:
+   ```
+   npm install
+   ```
 
-```bash
-npm run dev
+4. Start de ontwikkelingsserver:
+   ```
+   npm run dev
+   ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+5. Open je webbrowser en ga naar `http://localhost:5000` om het project te bekijken.
 
-## Building
+## Kenmerken
+Dit project is ontwikkeld met behulp van de volgende technologieën en services:
 
-To create a production version of your app:
+- **Figma**: Een programma om een prototype van de site maken.
 
-```bash
-npm run build
-```
+- **Svelte**: Een moderne JavaScript-framework voor het bouwen van krachtige gebruikersinterfaces.
 
-You can preview the production build with `npm run preview`.
+- **Hygraph**: Een headless CMS (Content Management System) dat het beheer van content vereenvoudigt en flexibel maakt.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Bronnen
+
+Hier komen de bronnen
+
+## Licentie
+
+This project is licensed under the terms of the [MIT license](./LICENSE).
