@@ -34,7 +34,7 @@ Om Platform Grote Thema's te installeren, volg je eenvoudig de onderstaande stap
    npm run dev
    ```
 
-5. Open je webbrowser en ga naar `http://localhost:5000` om het project te bekijken.
+5. Open je webbrowser en ga naar `http://localhost:5173` om het project te bekijken.
 
 ## Kenmerken
 Dit project is ontwikkeld met behulp van de volgende technologieën en services:
