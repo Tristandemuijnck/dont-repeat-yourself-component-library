@@ -57,44 +57,10 @@
           </form>
         </section>
         <section class="filter-menu">
+
+          
           <NavFilterList {data}></NavFilterList>
-          <!-- <ul class="focus">
-            
-            
-            <li><h2> Focus<input type="checkbox"></h2></li>
-            <li>Ik<input type="checkbox"></li>
-            <li>De ander<input type="checkbox"></li>
-            <li>De wereld<input type="checkbox"></li>
-          </ul>
-          <ul class="doel">
-            <li><h2> Doel<input type="checkbox"></h2></li>
-
-            <li>Professioneel id ontwikkelen<input type="checkbox"></li>
-            <li>
-             Persoonlijke interesse aanspreken<input type="checkbox">
-            </li>
-            <li>Kennis opdoen <input type="checkbox"></li>
-            <li>Richtlijnen toepassen<input type="checkbox"></li>
-            <li>Golden oldies verrijken<input type="checkbox"></li>
-            <li>Tools toepassen<input type="checkbox"></li>
-            <li>Dialoog voeren<input type="checkbox"></li>
-            <li>Praktijk betrekken<input type="checkbox"></li>
-          </ul>
-          <ul class="onderwerp">
-            <li><h2> Onderwerp<input type="checkbox"></h2></li>
-
-            <li>Duurzaamheid<input type="checkbox"></li>
-            <li>Diversiteit<input type="checkbox"></li>
-            <li>Digitalisering<input type="checkbox"></li>
-            <li>Democratie<input type="checkbox"></li>
-          </ul>
-          <ul class="fase">
-            <li><h2>Fase<input type="checkbox" > </h2></li>
-            <li>Opwarmer<input type="checkbox"></li>
-            <li>Verbreden<input type="checkbox"></li>
-            <li>Verdiepen<input type="checkbox"></li>
-            <li>Uitwisselen<input type="checkbox"></li>
-          </ul> -->
+        
           
           <button class="activate-filters">Filters toepassen</button>
        

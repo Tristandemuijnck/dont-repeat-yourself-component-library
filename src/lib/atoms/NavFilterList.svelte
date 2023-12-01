@@ -2,8 +2,14 @@
    
 
     export let data;
-    const tagIds = ['clpl0vr7g16x10bvz5txuso4g' , 'clpl0rq3814cl0bvzawxbkmtm', 'clpldj1qq2d5r0bw483xnvoyh', 'clpldjitj6nx10bw03rhqup1v'];
-    const headerFilterTags = data.tags.filter(tag => tagIds.includes(tag.id));
+    // een array met de id's van de tags die header moeten worden
+    const headerTagIds = ['clpl0vr7g16x10bvz5txuso4g' , 'clpl0rq3814cl0bvzawxbkmtm', 'clpldj1qq2d5r0bw483xnvoyh', 'clpldjitj6nx10bw03rhqup1v'];
+    
+     // in dit variabel zitten de tags overeenkomen met een specifiek id. 
+    // the filter() is een methode
+    // de => opent een functie
+    // includes() is een methode
+    const headerFilterTags = data.tags.filter(tag => headerTagIds.includes(tag.id));
   
     console.log(data)
     console.log(data.tags)
@@ -22,7 +28,9 @@
     </ul>
     <ul>
       {#each data.tags as tag}
-        {#if !tagIds.includes(tag.id)}
+      <!-- dit if statement checkt of de tag in de lijst met headerTagIds zit -->
+        {#if !headerTagIds.includes(tag.id)}
+        <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
           <li>{tag.titel}<input type="checkbox" /></li>
         {/if}
       {/each}

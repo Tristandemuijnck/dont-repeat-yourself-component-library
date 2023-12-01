@@ -24,6 +24,9 @@ export async function load() {
 			tags {
 				id
 				titel
+				kleur {
+					hex
+				}
 			}
 		}
 	`;
