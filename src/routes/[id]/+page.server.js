@@ -1,5 +1,5 @@
-import { gql } from 'graphql-request'
-import { hygraph, hygraphHP } from '$lib/Utils/hygraph'
+import { gql } from 'graphql-request';
+import { hygraph, hygraphHP } from '$lib/Utils/hygraph';
 
 export async function load({ params }) {
 	let query = gql`
@@ -37,7 +37,7 @@ export async function load({ params }) {
 				}
 			}
 		}
-	`
-	const data = await hygraphHP.request(query, { id: params.id })
-    return data
+	`;
+	const data = await hygraphHP.request(query, { id: params.id });
+	return data;
 }

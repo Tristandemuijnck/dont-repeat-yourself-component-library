@@ -1,4 +1,7 @@
 <script>
+
+    
+    import Nav from "$lib/organisms/nav.svelte"    
     import { page } from '$app/stores'
 	import LoginOutButton from '../lib/organisms/LoginOutButton.svelte';
 
@@ -15,11 +18,17 @@
 		}
 	}
 
+
     console.log(data)
 </script>
 
+
 <main>
+
+    <Nav {data}></Nav>
+
     <LoginOutButton />
+
 </main>
 
 <style>

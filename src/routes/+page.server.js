@@ -1,5 +1,6 @@
-import { gql } from 'graphql-request'
-import { hygraph, hygraphHP } from '$lib/Utils/hygraph'
+import { gql } from 'graphql-request';
+import { hygraph, hygraphHP } from '$lib/Utils/hygraph';
+export let data;
 
 export async function load() {
 	let query = gql`
@@ -14,6 +15,9 @@ export async function load() {
 				}
 				opleiding {
 					titel
+					faculteit {
+						titel
+					}
 				}
 				tags {
 					... on Tag {
@@ -21,11 +25,17 @@ export async function load() {
 						titel
 					}
 				}
-				title
+			}
+			tags {
+				id
+				titel
+				kleur {
+					hex
+				}
 			}
 		}
-	`
-	const data = await hygraphHP.request(query)
+	`;
+	const data = await hygraphHP.request(query);
 
-	return data
+	return data;
 }
