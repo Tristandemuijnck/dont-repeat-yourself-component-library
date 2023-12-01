@@ -1,7 +1,24 @@
 <script>
+
     
     import Nav from "$lib/organisms/nav.svelte"    
-    export let data;
+    import { page } from '$app/stores'
+	import LoginOutButton from '../lib/organisms/LoginOutButton.svelte';
+
+    export let data
+
+    let loading = false
+
+    const handleLogout = () => {
+		loading = true
+		return async ({ result }) => {
+			await invalidate('supabase:auth')
+			await applyAction(result)
+			loading = false
+		}
+	}
+
+
     console.log(data)
 </script>
 
@@ -9,6 +26,8 @@
 <main>
 
     <Nav {data}></Nav>
+
+    <LoginOutButton />
 
 </main>
 
