@@ -52,7 +52,7 @@
 			inputPlaceholder="Vul een naam in..."
 			inputName="werkvormName"
 			inputId="werkvormName"
-            isRequired={true}
+            isRequired={false}
 		/>
 
         <!-- Korte beschrijving -->
@@ -77,7 +77,7 @@
 			inputPlaceholder="Beschrijf de werkvorm..."
 			inputName="werkvormDesc"
 			inputId="werkvormDesc"
-            isRequired={true}
+            isRequired={false}
 		/>
 
         <!-- Opleiding -->
@@ -125,7 +125,7 @@
             inputName="werkvormThumbnail"
             inputId="werkvormThumbnail"
             inputPlaceholder="Selecteer een thumbnail..."
-            isRequired={true}
+            isRequired={false}
             hasMultiple={false}
         />
 

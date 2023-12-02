@@ -16,7 +16,7 @@
 
 		<!-- Upload Form -->
         <UploadForm
-            formAction="/api/upload"
+            formAction="?/create-werkvorm"
             formMethod="POST"
             btnText="Werkvorm Uploaden"
             {data}
