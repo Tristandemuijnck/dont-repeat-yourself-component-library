@@ -152,7 +152,7 @@
             inputId="werkvormMaterialen"
             inputPlaceholder="Selecteer materialen..."
             isRequired={false}
-            hasMultiple={true}
+            hasMultiple={false}
         />
 
         <!-- TODO Tags -->
