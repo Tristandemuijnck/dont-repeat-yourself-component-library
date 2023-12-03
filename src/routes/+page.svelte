@@ -19,6 +19,7 @@
 	}
 
 
+    
     console.log(data)
 </script>
 
@@ -26,8 +27,18 @@
 <main>
 
     <Nav {data}></Nav>
-
-    <LoginOutButton />
+    <div>
+        {#each data.werkvormen as werkvorm}
+        <h1>{werkvorm.title}</h1>
+        <p>{werkvorm.korteBeschrijving}</p>
+        {#each werkvorm.tags as tag}
+        <p style="border-color: {tag.kleur.css};">{tag.titel}</p>
+    {/each}
+   
+    {/each}
+    
+   
+</div>
 
 </main>
 

@@ -1,5 +1,5 @@
 <script>
-   
+    import { onMount } from 'svelte';
 
     export let data;
     // een array met de id's van de tags die header moeten worden
@@ -10,9 +10,8 @@
     // de => opent een functie
     // includes() is een methode
     const headerFilterTags = data.tags.filter(tag => headerTagIds.includes(tag.id));
+    
   
-    console.log(data)
-    console.log(data.tags)
 
    
 </script>
@@ -23,7 +22,8 @@
   <div class="tag">
     <ul>
       {#each headerFilterTags as tag}
-        <li><h2>{tag.titel}<input type="checkbox" /></h2></li>
+      <!-- de tag is aan een checkbox verbonden zodat de state geregisteerd wordt -->
+      <li><h2>{tag.titel}<input type="checkbox" bind:checked={tag.checked}/></h2></li>
       {/each}
     </ul>
     <ul>
@@ -31,7 +31,7 @@
       <!-- dit if statement checkt of de tag in de lijst met headerTagIds zit -->
         {#if !headerTagIds.includes(tag.id)}
         <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
-          <li>{tag.titel}<input type="checkbox" /></li>
+        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} /></li>
         {/if}
       {/each}
     </ul>
