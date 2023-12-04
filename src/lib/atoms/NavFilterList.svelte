@@ -11,8 +11,8 @@
     // includes() is een methode
     const headerFilterTags = data.tags.filter(tag => headerTagIds.includes(tag.id));
   
-    console.log(data)
-    console.log(data.tags)
+    
+
 
    
 </script>
