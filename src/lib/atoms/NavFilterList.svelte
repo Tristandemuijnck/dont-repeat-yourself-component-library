@@ -32,7 +32,7 @@
         {#if !headerTagIds.includes(tag.id)}
         <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
           <li>{tag.titel}<input type="checkbox" /></li>
-        {/if}
+        {/if} 
       {/each}
     </ul>
       
