@@ -17,10 +17,18 @@
 			loading = false
 		}
 	}
+ // Function to check if a werkvorm should be displayed based on selected tags
+ function shouldDisplayWerkvorm(werkvorm) {
+    return werkvorm.tags.some(tag => tag.checked);
+  }
 
+  // Function to check if a tag is selected
+  function isTagSelected(tag) {
+    return tag.checked;
+  }
 
     
-    console.log(data)
+  
 </script>
 
 
@@ -29,16 +37,17 @@
     <Nav {data}></Nav>
     <div>
         {#each data.werkvormen as werkvorm}
-        <h1>{werkvorm.title}</h1>
-        <p>{werkvorm.korteBeschrijving}</p>
-        {#each werkvorm.tags as tag}
-        <p style="border-color: {tag.kleur.css};">{tag.titel}</p>
-    {/each}
-   
-    {/each}
-    
-   
-</div>
+          {#if shouldDisplayWerkvorm(werkvorm)}
+            <h1>{werkvorm.title}</h1>
+            <p>{werkvorm.korteBeschrijving}</p>
+            {#each werkvorm.tags as tag}
+              {#if isTagSelected(tag)}
+                <p style="border-color: {tag.kleur.css};">{tag.titel}</p>
+              {/if}
+            {/each}
+          {/if}
+        {/each}
+      </div>
 
 </main>
 

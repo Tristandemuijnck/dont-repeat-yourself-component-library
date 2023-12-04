@@ -14,6 +14,10 @@
   
 
    
+  // Function to handle checkbox change
+  function handleCheckboxChange(tag) {
+    tag.checked = !tag.checked; // Toggle the checked state
+  }
 </script>
 
 <!-- tags stond binnen werkvormen in de query en daarom werkte het niet -->
@@ -23,7 +27,7 @@
     <ul>
       {#each headerFilterTags as tag}
       <!-- de tag is aan een checkbox verbonden zodat de state geregisteerd wordt -->
-      <li><h2>{tag.titel}<input type="checkbox" bind:checked={tag.checked}/></h2></li>
+      <li><h2>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)}/></h2></li>
       {/each}
     </ul>
     <ul>
@@ -31,7 +35,7 @@
       <!-- dit if statement checkt of de tag in de lijst met headerTagIds zit -->
         {#if !headerTagIds.includes(tag.id)}
         <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
-        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} /></li>
+        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)} /></li>
         {/if}
       {/each}
     </ul>
