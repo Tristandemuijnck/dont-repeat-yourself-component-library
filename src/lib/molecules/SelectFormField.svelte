@@ -1,16 +1,16 @@
 <script>
 	import Icon from '$lib/atoms/Icon.svelte'
 	import Label from '$lib/atoms/Label.svelte'
-	import StandardInput from '$lib/atoms/inputfields/StandardInput.svelte'
+    import SelectField from '$lib/atoms/inputfields/SelectField.svelte'
 
 	export let iconSrc
 	export let labelFor
 	export let labelText
-	export let inputType
-	export let inputPlaceholder
-	export let inputName
-	export let inputId
-    export let isRequired
+	export let selectName;
+	export let selectId;
+	export let selectPlaceholder;
+	export let options;
+    export let isRequired;
 </script>
 
 <div class="form-field">
@@ -19,7 +19,7 @@
 		<Label {labelFor} {labelText}></Label>
 	</span>
 
-	<StandardInput {inputType} {inputPlaceholder} {inputName} {inputId} {isRequired}></StandardInput>
+	<SelectField {selectName} {selectId} {selectPlaceholder} {options} {isRequired}></SelectField>
 </div>
 
 <style>

@@ -1,11 +1,14 @@
 <script>
-    export let inputType
-    export let inputPlaceholder
-    export let inputName
-    export let inputId
+    export let inputType = "text"
+    export let inputPlaceholder = ""
+    export let inputName = ""
+    export let inputId = ""
+    export let isRequired = false
+    export let accepted = "image/*,video/*"
+    export let hasMultiple = false
 </script>
 
-<input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}">
+<input type="{inputType}" placeholder="{inputPlaceholder}" name="{inputName}" id="{inputId}" required={isRequired} accept={accepted} multiple={hasMultiple}>
 
 <style>
     input{
