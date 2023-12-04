@@ -45,7 +45,7 @@
 	<div class="form-content">
 		<!-- Naam -->
 		<FormField
-			iconSrc="/images/icons/email.svg"
+			iconSrc="/images/icons/user.svg"
 			labelFor="werkvormName"
 			labelText="Naam werkvorm"
 			inputType="text"
@@ -57,7 +57,7 @@
 
         <!-- Korte beschrijving -->
 		<LimitedFormField
-            iconSrc="/images/icons/email.svg"
+            iconSrc="/images/icons/description.svg"
             labelFor="werkvormShortDesc"
             labelText="Korte beschrijving werkvorm"
             inputType="text"
@@ -70,7 +70,7 @@
 
 		<!-- Beschrijving -->
 		<FormField
-			iconSrc="/images/icons/email.svg"
+			iconSrc="/images/icons/description.svg"
 			labelFor="werkvormDesc"
 			labelText="Beschrijving werkvorm"
 			inputType="text"
@@ -82,7 +82,7 @@
 
         <!-- Opleiding -->
 		<SelectFormField
-			iconSrc="/images/icons/email.svg"
+			iconSrc="/images/icons/school.svg"
 			labelFor="werkvormOpleiding"
 			labelText="Opleiding"
 			selectName="werkvormOpleiding"
@@ -94,7 +94,7 @@
 
         <!-- Studiejaar -->
         <FormField
-            iconSrc="/images/icons/email.svg"
+            iconSrc="/images/icons/year.svg"
             labelFor="werkvormStudiejaar"
             labelText="Studiejaar"
             inputType="number"
@@ -106,7 +106,7 @@
 
         <!-- Contactpersoon -->
         <SelectFormField
-			iconSrc="/images/icons/email.svg"
+			iconSrc="/images/icons/contact.svg"
 			labelFor="werkvormContactpersoon"
 			labelText="Contactpersoon"
 			selectName="werkvormContactpersoon"
@@ -118,7 +118,7 @@
 
         <!-- Thumbnail -->
         <FileFormField
-            iconSrc="/images/icons/email.svg"
+            iconSrc="/images/icons/thumbnail.svg"
             labelFor="werkvormThumbnail"
             labelText="Thumbnail werkvorm"
             inputType="file"
@@ -131,7 +131,7 @@
 
         <!-- Video -->
         <FileFormField
-            iconSrc="/images/icons/email.svg"
+            iconSrc="/images/icons/video.svg"
             labelFor="werkvormVideo"
             labelText="Video werkvorm"
             inputType="file"
@@ -144,7 +144,7 @@
 
         <!-- Materialen -->
         <FileFormField
-            iconSrc="/images/icons/email.svg"
+            iconSrc="/images/icons/materials.svg"
             labelFor="werkvormMaterialen"
             labelText="Materialen werkvorm"
             inputType="file"
