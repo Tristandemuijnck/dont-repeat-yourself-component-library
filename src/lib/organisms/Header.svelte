@@ -75,7 +75,7 @@
 	}
 
 	a {
-		text-decoration: none !important;
+		text-decoration: underline;
 	}
 
 	.nav-components {
