@@ -1,7 +1,8 @@
 <script>
-    import { onMount } from 'svelte';
+    
 
     export let data;
+   
     // een array met de id's van de tags die header moeten worden
     const headerTagIds = ['clpl0vr7g16x10bvz5txuso4g' , 'clpl0rq3814cl0bvzawxbkmtm', 'clpldj1qq2d5r0bw483xnvoyh', 'clpldjitj6nx10bw03rhqup1v'];
     
@@ -11,12 +12,25 @@
     // includes() is een methode
     const headerFilterTags = data.tags.filter(tag => headerTagIds.includes(tag.id));
     
-  
     
-  // Function to handle checkbox change
-  function handleCheckboxChange(tag) {
-    tag.checked = !tag.checked; // Toggle the checked state
-  }
+    // // alleen de tags die gecheckt zijn worden teruggegeven
+    // function filterMatch(tag) {
+    //     return tag.checked;
+    // }
+
+    // // dit is om de tag uit en aan de kunnen toggelen
+    // function handleCheckboxChange(tag) {
+    //     tag.checked = !tag.checked;
+    // }
+
+      // functie om de tagtitel te laten matchen met de tag titel van de werkvorm
+
+  function filterMatch(tagTitel, werkvorm){
+    // tagtitel wordt teruggegevn wanneer de tag checked is
+  return tagTitel === werkvorm.tag.checked
+ }
+    
+
 </script>
 
 <!-- tags stond binnen werkvormen in de query en daarom werkte het niet -->
@@ -26,7 +40,7 @@
     <ul>
       {#each headerFilterTags as tag}
       <!-- de tag is aan een checkbox verbonden zodat de state geregisteerd wordt -->
-      <li><h2>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)}/></h2></li>
+      <input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)} />
       {/each}
     </ul>
     <ul>
@@ -34,7 +48,7 @@
       <!-- dit if statement checkt of de tag in de lijst met headerTagIds zit -->
         {#if !headerTagIds.includes(tag.id)}
         <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
-        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)} /></li>
+        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => filterMatch(tag)} /></li>
         {/if}
          
       {/each}
@@ -42,6 +56,7 @@
       
     
   </div>
+  
 
 
 <style>

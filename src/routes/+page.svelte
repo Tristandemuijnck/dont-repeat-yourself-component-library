@@ -17,18 +17,17 @@
 			loading = false
 		}
 	}
- // Function to check if a werkvorm should be displayed based on selected tags
- function shouldDisplayWerkvorm(werkvorm) {
-    return werkvorm.tags.some(tag => tag.checked);
-  }
 
-  // Function to check if a tag is selected
-  function isTagSelected(tag) {
-    return tag.checked;
-  }
 
+  // functie om de tagtitel te laten matchen met de tag titel van de werkvorm
+
+  function filterMatch(tagTitel, werkvorm){
+    // tagtitel wordt teruggegevn wanneer de tag checked is
+  return tagTitel === werkvorm.tag.checked
+ }
     
-  
+
+
 </script>
 
 
@@ -37,15 +36,14 @@
     <Nav {data}></Nav>
     <div>
         {#each data.werkvormen as werkvorm}
-          {#if shouldDisplayWerkvorm(werkvorm)}
             <h1>{werkvorm.title}</h1>
             <p>{werkvorm.korteBeschrijving}</p>
             {#each werkvorm.tags as tag}
-              {#if isTagSelected(tag)}
+               <!-- als de tag.titel met de werkvorm titel match dan wordt het kaartje getoont -->
+            {#if filterMatch(tag.titel, werkvorm.title)}
                 <p style="border-color: {tag.kleur.css};">{tag.titel}</p>
               {/if}
             {/each}
-          {/if}
         {/each}
       </div>
 
