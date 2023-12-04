@@ -12,8 +12,7 @@
     const headerFilterTags = data.tags.filter(tag => headerTagIds.includes(tag.id));
     
   
-
-   
+    
   // Function to handle checkbox change
   function handleCheckboxChange(tag) {
     tag.checked = !tag.checked; // Toggle the checked state
@@ -37,6 +36,7 @@
         <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
         <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)} /></li>
         {/if}
+         
       {/each}
     </ul>
       
