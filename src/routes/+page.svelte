@@ -18,8 +18,8 @@
 		}
 	}
 
-
     console.log(data)
+    import Werkvorm from "$lib/organisms/werkvorm.svelte";
 </script>
 
 
@@ -29,6 +29,8 @@
 
     <LoginOutButton />
 
+
+<Werkvorm {data} />
 </main>
 
 <style>
@@ -37,5 +39,6 @@
 		flex-direction: column;
 		padding: 0 2rem;
 		width: 100%;
+
     }
 </style>

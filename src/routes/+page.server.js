@@ -1,15 +1,20 @@
-import { gql } from 'graphql-request';
-import { hygraph, hygraphHP } from '$lib/Utils/hygraph';
+import {gql} from 'graphql-request';
+import {hygraph, hygraphHP} from '$lib/Utils/hygraph';
+
 export let data;
 
 export async function load() {
-	let query = gql`
+    let query = gql`
 		query Assets {
 			werkvormen {
+			title
 				beschrijving
 				korteBeschrijving
 				link
 				studiejaar
+				    thumbnail {
+                        url
+                    }
 				contactpersonen {
 					email
 				}
@@ -35,7 +40,7 @@ export async function load() {
 			}
 		}
 	`;
-	const data = await hygraphHP.request(query);
+    const data = await hygraphHP.request(query);
 
-	return data;
+    return data;
 }
