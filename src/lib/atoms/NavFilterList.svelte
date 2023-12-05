@@ -25,11 +25,14 @@
 
       // functie om de tagtitel te laten matchen met de tag titel van de werkvorm
 
-  function filterMatch(tagTitel, werkvorm){
-    // tagtitel wordt teruggegevn wanneer de tag checked is
-  return tagTitel === werkvorm.tag.checked
- }
-    
+//   function filterMatch(tagTitel, werkvorm){
+//     // tagtitel wordt teruggegevn wanneer de tag checked is
+//   return tagTitel === werkvorm.tag.checked
+//  }
+// //  alternatieve functie 
+// //  werkvormen worden gefilterd. tussen de haakjes staat een voorwaarde
+// const filtered = data.werkvormen.filter(werkvorm => werkvorm.tag.titel === werkvorm.tag.checked);
+ 
 
 </script>
 
@@ -40,7 +43,7 @@
     <ul>
       {#each headerFilterTags as tag}
       <!-- de tag is aan een checkbox verbonden zodat de state geregisteerd wordt -->
-      <input type="checkbox" bind:checked={tag.checked} on:change={() => handleCheckboxChange(tag)} />
+      <h2>{tag.titel}</h2><input type="checkbox" bind:checked={tag.checked} />
       {/each}
     </ul>
     <ul>
@@ -48,7 +51,7 @@
       <!-- dit if statement checkt of de tag in de lijst met headerTagIds zit -->
         {#if !headerTagIds.includes(tag.id)}
         <!-- als de tag er niet inzit dan wordt hier de titel getoond -->
-        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked} on:change={() => filterMatch(tag)} /></li>
+        <li>{tag.titel}<input type="checkbox" bind:checked={tag.checked}  /></li>
         {/if}
          
       {/each}
@@ -67,7 +70,12 @@
    
    
   }
-  ul > li{
+  ul > h2{
+    padding: .5em;
+    margin-left: .9em;
+  }
+
+   ul > li{
     padding: .5em;
     margin-left: 1.5em;
   }
@@ -76,7 +84,7 @@
   ul input[type="checkbox"]{
     margin-left: 1em;
   }
-@media (min-width: 700px){
+@media (min-width: 800px){
   ul:first-of-type{
     display: flex;
     flex-direction: row;

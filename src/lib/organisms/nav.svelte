@@ -1,5 +1,6 @@
 <script>
   import NavFilterList from "../atoms/NavFilterList.svelte";
+  import LoginOutbutton from "../organisms/LoginOutButton.svelte"
   export let data;
  
   
@@ -42,7 +43,8 @@
         <button on:click={openMobileMenu}>Menu</button>
     {#if mobileDropdownActive}
         <button on:click={openFilter}> Filteren en zoeken</button>
-        <a href="/">Inloggen</a>
+        <a href="/"><LoginOutbutton/></a>
+
         <a href="/">Werkvorm uploaden</a>
       
     {/if}
@@ -80,7 +82,7 @@
   }
   .mobile-menu-dropdown > button {
     font-size: 2em;
-    width: 100vw;
+   
     background-color: #25167a;
     border: 0;
     padding: 1em;
@@ -92,7 +94,7 @@
 
   .mobile-menu-dropdown {
     background-color: #25167a;
-    width: 100vw;
+   
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -163,7 +165,8 @@
     height: max-content;
     align-self: flex-end;
     padding:1em;
-    margin: 1em;
+    margin: 1em 0 1em 2.5em;
+    background-color: #F25379;
     
   }
 

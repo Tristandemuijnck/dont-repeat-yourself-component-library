@@ -21,11 +21,12 @@
 
   // functie om de tagtitel te laten matchen met de tag titel van de werkvorm
 
-  function filterMatch(tagTitel, werkvorm){
-    // tagtitel wordt teruggegevn wanneer de tag checked is
-  return tagTitel === werkvorm.tag.checked
- }
+//   function filterMatch(tagTitel, werkvorm){
+//     // tagtitel wordt teruggegevn wanneer de tag checked is
+//   return tagTitel === werkvorm.tag.checked
+//  }
     
+//  const filtered = data.werkvormen.filter(werkvorm => werkvorm.tag.titel === werkvorm.tag.checked);
 
 
 </script>
@@ -40,9 +41,9 @@
             <p>{werkvorm.korteBeschrijving}</p>
             {#each werkvorm.tags as tag}
                <!-- als de tag.titel met de werkvorm titel match dan wordt het kaartje getoont -->
-            {#if filterMatch(tag.titel, werkvorm.title)}
+            <!-- {#if filterMatch(tag.titel, werkvorm.title)} -->
                 <p style="border-color: {tag.kleur.css};">{tag.titel}</p>
-              {/if}
+              <!-- {/if} -->
             {/each}
         {/each}
       </div>
