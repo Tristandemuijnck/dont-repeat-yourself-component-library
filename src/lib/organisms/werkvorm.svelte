@@ -17,7 +17,9 @@
             </picture>
             <article>
                 <h2>{werkvorm.title}</h2>
+                <div class="korte-beschrijving__conteiner">
                     <p>{werkvorm.korteBeschrijving}</p>
+                </div>
                 <div class="links-container">
                     <a href=/{werkvorm.link}>
                         <img src="Pijl.svg" alt="Pijl icoon" class="pijl-icoon">
@@ -52,7 +54,7 @@
 
     .werkvorm-component {
         font-family: 'Open Sans', sans-serif;
-        font-weight: ExtraBold;
+        font-weight: Bold;
         margin-bottom: 3rem;
         padding: 1rem;
         max-width: max-content;
@@ -72,6 +74,7 @@
     .thumbnail-img__container {
         margin: 2rem;
         max-width: 245px;
+        height: 330px;
     }
     .thumbnail-img{
         width: 100%;
@@ -80,16 +83,17 @@
 
     h2 {
         margin-top: 2rem;
-        font-weight: ExtraBold;
+        font-weight: Bold;
         font-size: 35px
     }
-
+.korte-beschrijving__conteiner{
+    max-width: 270px;
+}
     p {
         font-family: 'Open Sans', sans-serif;
         margin-top: 1rem;
-        font-weight: ExtraBold;
+        font-weight: Bold;
         font-size: 20px
-
     }
 
     .links-container {
@@ -107,8 +111,10 @@
 
     a {
         margin-top: 0.5rem;
-        text-decoration: none;
+        /*text-decoration: none;*/
+        text-decoration: underline;
         pointer: focus;
+
     }
     .pijl-icoon {
 
@@ -122,7 +128,7 @@
         border: solid 3px #66E5BF;
         padding: 0.5rem;
         margin-right: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 1.2rem;
         font-size: 1rem;
     }
 
