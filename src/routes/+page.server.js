@@ -10,6 +10,7 @@ export async function load() {
 				korteBeschrijving
 				link
 				studiejaar
+				title
 				contactpersonen {
 					email
 				}
